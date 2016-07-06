@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="../libraries/materialize.min.css">
+        <link rel="stylesheet" href="soiduplaanid_resources/style.css">
+        <link rel="stylesheet" href="../content_script/style.css">
+        <style>
+            input[type=checkbox]+.lever.todo::after {
+                background-color: #f44336 !important; /* red */
+            }
+            input[type=checkbox]+.lever.todo {
+                background-color: #ef9a9a !important; /* red lighten 3 */
+            }
+            input[type=checkbox]:checked+.lever.done::after {
+                background-color: #388e3c !important; /* green */
+            }
+            input[type=checkbox]:checked+.lever.done {
+                background-color: #81c784 !important; /* green accent 3 */
+            }
+            input[type=checkbox]:checked+span+span {
+                color: black;
+            }
+
+            body {
+                width:900px;
+            }
+            .indent {
+                margin-left: 32px;
+            }
+            div[disabled] {
+                opacity: 0.4;
+            }
+            table {
+                width:auto;
+                display: inline-table;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+            <div class="section">
+                <div class="row">
+                    <div class="col s4">
+                        <div class="card-panel yellow lighten-3">
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" disabled>
+                                    <span class="lever done"></span>
+                                    <span> Deactivated feature </span>
+                                </label>
+                            </div>
+                            <br>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" checked disabled>
+                                    <span class="lever done"></span>
+                                    <span> Activated feature </span>
+                                </label>
+                            </div>
+                            <br>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" checked disabled>
+                                    <span class="lever todo"></span>
+                                    <span> Feature not yet implemented </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="card-panel teal lighten-5">
+                            <h2>Current day</h2>
+                            <hr>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" id="control_highlight">
+                                    <span class="lever done"></span>
+                                    <span> Raise day of next bus </span>
+                                </label>
+                            </div>
+                            <br>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" id="control_fade">
+                                    <span class="lever done"></span>
+                                    <span> Fade other days </span>
+                                </label>
+                            </div>
+                            <br>
+
+                            <h2>Current time</h2>
+                            <hr>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" id="control_cursor">
+                                    <span class="lever done"></span>
+                                    <span> Show red dot before next bus </span>
+                                </label>
+                            </div>
+                            <br>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" id="control_fade_time">
+                                    <span class="lever todo"></span>
+                                    <span> Fade previous bus times </span>
+                                </label>
+                            </div>
+                            <br>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" id="control_countdown">
+                                    <span class="lever done"></span>
+                                    <span> Show countdown to next bus </span>
+                                </label>
+                            </div>
+                            <br>
+
+                            <h2>Other</h2>
+                            <hr>
+                            <div class="switch">
+                                <label>
+                                    <input type="checkbox" id="control_signature">
+                                    <span class="lever done"></span>
+                                    <span> Show signature (no preview)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col s8">
+                        <div class="col s12">
+                            <div class="card-panel">
+                                <h1>Preview</h1>
+                                <p>This is how your settings would appear on Saturday, 23:30</p>
+                                <hr>
+                                <table id=workdayTable class="timetable" cellspacing="0" cellpadding="0"><tbody><tr><th></th><th class="workdays">Tööpäev</th></tr><tr><th>&nbsp;</th><td></td></tr><tr><th>6</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">02</a></td></tr><tr><th>7</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">39</a></td></tr><tr><th>8</th><td><a  title="Harkujärve - Laagri alevik">33</a></td></tr><tr><th>9</th><td><a  title="Harkujärve - Laagri alevik">13</a><a  title="Harkujärve - Laagri alevik" class="highlighted">51</a></td></tr><tr><th>10</th><td><a  title="Harkujärve - Laagri alevik">29</a></td></tr><tr><th>11</th><td><a  title="Harkujärve - Laagri alevik">07</a><a  title="Harkujärve - Laagri alevik" class="highlighted">52</a></td></tr><tr><th>12</th><td><a  title="Harkujärve - Laagri alevik">37</a></td></tr><tr><th>13</th><td><a  title="Harkujärve - Laagri alevik">14</a><a  title="Harkujärve - Laagri alevik" class="highlighted">52</a></td></tr><tr><th>14</th><td><a  title="Harkujärve - Laagri alevik">33</a></td></tr><tr><th>15</th><td><a  title="Harkujärve - Laagri alevik">10</a><a  title="Harkujärve - Laagri alevik" class="highlighted">47</a></td></tr><tr><th>16</th><td><a  title="Harkujärve - Laagri alevik">24</a><a  title="Harkujärve - Väike-Õismäe" class="other1">49</a></td></tr><tr><th>17</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">31</a></td></tr><tr><th>18</th><td><a  title="Harkujärve - Väike-Õismäe" class="other1">00</a></td></tr><tr><th>19</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">41</a></td></tr><tr><th>-</th><td></td></tr><tr><th>21</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">37</a></td></tr><tr><th>-</th><td></td></tr><tr><th>23</th><td><a  title="Harkujärve - Väike-Õismäe" class="other1 highlighted">06</a></td></tr></tbody></table>
+
+                                <table id=saturdayTable class="timetable" cellspacing="0" cellpadding="0"><tbody><tr><th></th><th class="workdays">Laupäev</th></tr><tr><th>&nbsp;</th><td></td></tr><tr><th>6</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">02</a></td></tr><tr><th>7</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">39</a></td></tr><tr><th>8</th><td><a  title="Harkujärve - Laagri alevik">33</a></td></tr><tr><th>9</th><td><a  title="Harkujärve - Laagri alevik">13</a><a  title="Harkujärve - Laagri alevik" class="highlighted">51</a></td></tr><tr><th>10</th><td><a  title="Harkujärve - Laagri alevik">29</a></td></tr><tr><th>11</th><td><a  title="Harkujärve - Laagri alevik">07</a><a  title="Harkujärve - Laagri alevik" class="highlighted">52</a></td></tr><tr><th>12</th><td><a  title="Harkujärve - Laagri alevik">37</a></td></tr><tr><th>13</th><td><a  title="Harkujärve - Laagri alevik">14</a><a  title="Harkujärve - Laagri alevik" class="highlighted">52</a></td></tr><tr><th>14</th><td><a  title="Harkujärve - Laagri alevik">33</a></td></tr><tr><th>15</th><td><a  title="Harkujärve - Laagri alevik">10</a><a  title="Harkujärve - Laagri alevik" class="highlighted">47</a></td></tr><tr><th>16</th><td><a  title="Harkujärve - Laagri alevik">24</a><a  title="Harkujärve - Väike-Õismäe" class="other1">49</a></td></tr><tr><th>17</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">31</a></td></tr><tr><th>18</th><td><a  title="Harkujärve - Väike-Õismäe" class="other1">00</a></td></tr><tr><th>19</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">41</a></td></tr><tr><th>-</th><td></td></tr><tr><th>21</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">37</a></td></tr><tr><th>-</th><td></td></tr><tr><th>23</th><td><a  title="Harkujärve - Väike-Õismäe" class="other1 highlighted">06</a></td></tr></tbody></table>
+
+                                <table id=sundayTable class="timetable" cellspacing="0" cellpadding="0"><tbody><tr><th></th><th class="workdays">Pühapäev</th></tr><tr><th>&nbsp;</th><td></td></tr><tr><th>6</th><td>
+                                    <span id=cursor><span></span></span>
+                                <a  title="Harkujärve - Laagri alevik" class="highlighted">02</a></td></tr><tr><th>7</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">39</a></td></tr><tr><th>8</th><td><a  title="Harkujärve - Laagri alevik">33</a></td></tr><tr><th>9</th><td><a  title="Harkujärve - Laagri alevik">13</a><a  title="Harkujärve - Laagri alevik" class="highlighted">51</a></td></tr><tr><th>10</th><td><a  title="Harkujärve - Laagri alevik">29</a></td></tr><tr><th>11</th><td><a  title="Harkujärve - Laagri alevik">07</a><a  title="Harkujärve - Laagri alevik" class="highlighted">52</a></td></tr><tr><th>12</th><td><a  title="Harkujärve - Laagri alevik">37</a></td></tr><tr><th>13</th><td><a  title="Harkujärve - Laagri alevik">14</a><a  title="Harkujärve - Laagri alevik" class="highlighted">52</a></td></tr><tr><th>14</th><td><a  title="Harkujärve - Laagri alevik">33</a></td></tr><tr><th>15</th><td><a  title="Harkujärve - Laagri alevik">10</a><a  title="Harkujärve - Laagri alevik" class="highlighted">47</a></td></tr><tr><th>16</th><td><a  title="Harkujärve - Laagri alevik">24</a><a  title="Harkujärve - Väike-Õismäe" class="other1">49</a></td></tr><tr><th>17</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">31</a></td></tr><tr><th>18</th><td><a  title="Harkujärve - Väike-Õismäe" class="other1">00</a></td></tr><tr><th>19</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">41</a></td></tr><tr><th>-</th><td></td></tr><tr><th>21</th><td><a  title="Harkujärve - Laagri alevik" class="highlighted">37</a></td></tr><tr><th>-</th><td></td></tr><tr><th>23</th><td><a  title="Harkujärve - Väike-Õismäe" class="other1 highlighted">06</a></td></tr></tbody></table>
+
+                                <div id="divScheduleRight" class="active" style="background-color: #ededed">
+                                    <dl id="dlDirStops2"><dt><a class="hover" >Laaniku</a></dt><dt><a class="hover" >Laaniku</a></dt><dt><a class="hover" >Turbasambla</a></dt><dt><a class="current" >Laagri alevik
+                                        <span id="countdown"> → 6:32:00</span>
+                                    </a></dt><dt><a class="hover" >Rahnu</a></dt><dt><a class="hover" >Laagri</a></dt><dt><a class="hover" >Laagri</a></dt><dt><a class="hover" >Viljaku</a></dt><dt><a class="hover" >Vana-Pääsküla</a></dt><dt><a class="hover" >Pärnu maantee</a></dt><dt><a class="hover" >Rohula</a></dt><dt><a class="hover" >Pääsküla jaam</a></dt><dt><a class="hover" >Värsi</a></dt><dt><a class="hover" >Laane</a></dt><dt><a class="hover">Rahnu</a></dt></dl>
+                                </div>
+                                <br style="clear: both;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Your changes are saved automatically...</h2>
+            </div>
+
+
+    </body>
+</html>

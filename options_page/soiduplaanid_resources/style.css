@@ -1,0 +1,751 @@
+/* html5doctor.com Reset Stylesheet v1.6.1 Last Updated:2010-09-17 Author:Richard Clark - http://richclarkdesign.com Twitter:@rich_clark */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,
+small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{
+    margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline;
+}
+
+form { margin: 0; } /* Corrects margin displayed oddly in IE6/7 */
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{ display:block; }
+
+nav ul{ list-style:none; }
+
+a{ margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+table{ border-collapse:collapse; border-spacing:0; } /* tables still need cellspacing="0" in the markup */
+
+hr{ display:block; height:1px; border:0; border-top:1px solid #cccccc; margin:1em 0; padding:0; } /* change border colour to suit your needs */
+/* END RESET CSS */
+
+/* fonts.css from the YUI Library: developer.yahoo.com/yui/
+   Refer to developer.yahoo.com/yui/3/cssfonts/ for font sizing percentages
+
+  There are three custom edits:
+   * remove arial, helvetica from explicit font stack
+   * we normalize monospace styles ourselves
+   * table font-size is reset in the HTML5 reset above so there is no need to repeat
+*/
+body { font:13px/1.231 Arial,sans-serif; } /* hack retained to preserve specificity */
+/*body { font:13px/1.231 sans-serif; *font-size:small; }*/
+
+select, input, textarea, button { font:99% sans-serif; }
+select, input, textarea { font-family:inherit; } /* To make IE6/7 inherit the font styles from parent selectors */
+
+h1,h2,h3,h4,h5,h6{ font-weight:bold; }
+h1{ font-size:24px;} /* Headers (h1,h2,etc) have no default font-size or margin, you'll want to define those yourself. */
+/*END fonts.css */
+
+.strong, b, strong, th{ font-weight:bold; }
+
+input,select          { vertical-align:baseline; }
+input[type="radio"]   { vertical-align:baseline; } /* align checkboxes,radios,text inputs with their label by:Thierry Koblentz tjkdesign.com/ez-css/css/base.css ; */
+input[type="checkbox"]{ vertical-align:bottom; *vertical-align:baseline;}
+input[type="text"]    { padding:1px; }
+label,input[type=button],input[type=submit],button{ cursor:pointer; } /* hand element on clickable input elements */
+label{ white-space:nowrap;}
+
+/* webkit browsers add a 2px margin outside the chrome of form elements */
+/* button, input, select, textarea { margin: 0; } */
+
+td{ padding:2px; white-space: nowrap; /* suppress line breaks */ overflow: hidden; }
+
+a,a:link,a:visited,a:active{ text-decoration:none; cursor:pointer; color:black; background-repeat:no-repeat; } /* general "a" styles */
+.underlined,a.underlined,a:hover .hover,a.hover:hover { text-decoration:underline; }
+a.underlined { white-space:nowrap; }
+
+.pointer { cursor:pointer; }
+.indented { text-indent: 23px; }
+
+a:focus { outline: thin dotted; } /* Addresses outline displayed oddly in Chrome */
+a:hover, a:active{ outline:none; } /* Accessible focus treatment:people.opera.com/patrickl/experiments/keyboard/test */
+
+html{ height:100%; overflow:auto; }
+body{ height:100%; background-color:#E0E0E0; }
+
+#divHeader{ overflow:hidden; width:100%; height:36px; line-height:36px; background-color:#E0E0E0; border-bottom: 1px solid #999999; }
+
+.ScheduleDisplayed #divHeader,.ScheduleMapDisplayed #divHeader,.ScheduleMapDisplayedMax #divHeader { color:#404040; background-color:#808080; cursor:pointer;}
+
+#divTitle{ float:left; padding-left:10px; }
+
+#divLang{ float:right; margin:5px 10px; line-height:20px; }
+
+#divContainer{ position:absolute; top:37px;	bottom:0; left:0; width:100%; min-width:700px; overflow:auto; }
+
+#divNav{ float:left; width:190px; padding:5px 0 5px; background-color:#E0E0E0; border-bottom:1px none #808080; }
+
+.splitter{ height:1px; line-height:1px; margin:5px 0 5px 5px;
+    border:0 solid; border-top-width: 1px; border-color:  #808080 #FFFFFF #FFFFFF #808080; }
+
+#divNav a{ display:block; padding:3px 0 3px 33px; text-indent: -23px; }
+#spanRoutesFromStop{ display:block; }
+
+#divNav a:hover, #listTransports a:hover, #listSearch a:hover, #listPlan a:hover{ background-color:#F0F0F0; }
+
+#divNav a.active:hover,#divNav .active{ background-color:white; font-weight:bold; text-decoration:none; } /* do not hover over active item */
+
+#divContentWrapper{	width:auto;	height:100%; overflow:hidden; background-color:white; }
+
+.MapDisplayed #divContentWrapper{ float:left; width:420px; }
+.ScheduleDisplayed #divContentWrapper{ min-width:700px;}
+.ScheduleMapDisplayed #divContentWrapper{ float:left; width:610px; }
+.ScheduleDisplayed #divNav .active,.ScheduleMapDisplayed #divNav .active {background-color: #E0E0E0; border-style: none; padding: 6px 5px 6px 2px;}
+
+.MapDisplayedMax #divContentWrapper,.MapDisplayedMax #divNav { display:none; }
+.ScheduleDisplayed #divNav, .ScheduleMapDisplayed #divNav, .ScheduleMapDisplayedMax #divNav
+,.ScheduleDisplayed #divContent, .ScheduleMapDisplayed #divContent, .ScheduleMapDisplayedMax #divContent { display:none; }
+
+#divMapWrapper{ width:100px; height:100px; overflow:hidden; display: none; }
+.MapDisplayed #divMapWrapper,.MapDisplayedMax #divMapWrapper
+,.ScheduleMapDisplayed #divMapWrapper,.ScheduleMapDisplayedMax #divMapWrapper { width:auto; height:100%; display:block; }
+
+#divMap{ width:100%; height:100%; overflow:hidden; background-color:lightgreen; }
+
+#divMapHide,#divMapMaximize,#divMapRestore{ position:absolute; top:10px; width:19px; height:19px; cursor:pointer; }
+#divMapHide{ right:10px; background-image:url('_imagesnew/close.png'); }
+#divMapMaximize,#divMapRestore{ right:32px; }
+#divMapMaximize{ background-image:url('_imagesnew/maximize.png'); }
+#divMapRestore{ background-image:url('_imagesnew/restore.png'); }
+
+.MapDisplayedMax #divMapMaximize,.ScheduleMapDisplayedMax #divMapMaximize{ display:none; }
+.MapDisplayed    #divMapRestore ,.ScheduleMapDisplayed    #divMapRestore { display:none; }
+.ScheduleMapDisplayed #divMapMaximize{ display:none; } /* not implemented yet */
+
+#divContent{ width:100%; height:100%; overflow:auto; background-color:white;} /* can not add padding or margins there - breaks width of divContentWrapper */
+
+#divContentRoutes,#divContentDepartingRoutes,#divContentPlanner{ display:block; height:auto; margin-left: 5px; padding:5px 0 5px 0;}
+#tblRoutes, #tblDepartingRoutes { margin-top:5px; background-color: #F0F0F0; border-top:1px solid lightgray; border-bottom:1px solid lightgray; }
+
+.MapDisplayed #tblRoutes,.MapDisplayed #tblDepartingRoutes { table-layout:fixed; }
+
+.routeName{ white-space:nowrap; min-width: 255px;}
+.lastcol{ width:100%; }
+.routeMap{ width:18px; }
+.MapDisplayed .routeName{ width:360px; }
+.MapDisplayed .weekdays,.MapDisplayed .lastcol{ display:none; }
+
+.RouteDetails { padding: 5px 0 5px 23px; }
+.DeparturesRow,.DeparturesRowFull { padding: 2px 0 5px 7px; vertical-align:text-top; border-bottom: 1px solid lightgray; white-space: normal; }
+.DeparturesRow .icon, .DeparturesRowFull .icon { margin-right: 0; }
+
+.DeparturesRow .collapse, .DeparturesRow .icon_collapse,
+.DeparturesRowFull .icon_expand, .DeparturesRowFull .hideWhenExpanded {display: none; }
+
+.DeparturesHour { font-weight:bold; font-size:medium; }
+
+#divContentPlannerOptions { padding:0 5px 15px 5px; }
+#divContentPlannerOptionsExtended{ padding:0 5px 15px 5px; }
+
+#divContentPlannerResults p.results{ padding: 5px 0 5px 20px; text-indent: -23px; line-height:150%;}
+p.help { padding:10px 10px 0 10px; text-indent:0; line-height:150%;}
+
+#inputStop,#inputStart,#inputFinish,#inputRoutes{
+    height:18px; vertical-align:middle;
+    color:black; background-color:white;
+    border:1px solid; border-color:  #808080 #C0C0C0 #C0C0C0 #808080;
+}
+
+#inputStop { width:165px; margin:0 0 3px 10px; padding-left:5px; }
+#inputRoutes { width:295px; }
+
+#inputStart,#inputFinish{ margin:3px 0; padding-left:16px; background-repeat:no-repeat; }
+#inputStart{ background-image:url('_imagesnew/MarkerGreen.png'); }
+#inputFinish{ background-image:url('_imagesnew/MarkerRed.png'); }
+
+#inputStop.empty,#inputStart.empty,#inputFinish.empty,#inputRoutes.empty { color:#808080; }
+
+
+#buttonSearch { vertical-align:top; padding:0 3px;}
+#aExtendedOptions,#aPlanShowMap { border-bottom: 1px dotted black;}
+#aPlanShowMap { margin-left:10px; display:none; }
+#aExtendedOptions:hover, #aExtendedOptions:active { border-bottom: 1px solid black;}
+
+#divControls{ display:none; position:absolute; white-space:nowrap; top:13px; left:50%; margin-left:-200px;}
+#divControls div {display: inline-block;}
+.ScheduleMapDisplayed #divControls { left:190px; margin-left:0; }
+.ScheduleMapDisplayed #aShowDirectionsMap { display: none; }
+
+#divControlsInner { display:inline-block; vertical-align: top; background-color:white;  height:24px; line-height:24px; }
+#divControlsInner a { margin-right:10px; font-weight:bold; color:#666666; font-size:small; }
+#divControlsInner a.icon { vertical-align:text-bottom; }
+#divControlsInner .icon_map:hover { border-color:transparent; }
+#divControlsInner :hover { color:black; }
+
+#iconSideLeft, #iconSideRight { display:inline-block; height:24px; width:14px; background: no-repeat top left; }
+#iconSideLeft  { background-image:url('_imagesnew/tabsideleft.png' ); }
+#iconSideRight { background-image:url('_imagesnew/tabsideright.png'); }
+
+
+#divScheduleHeader { display:none; position:absolute; top:0; height:16px; width:100%; padding:10px 0; overflow:hidden;	background-color:white; }
+#divScheduleBody { display:none; position:absolute; top:36px; bottom:0; left:0; width:100%; overflow:auto; background-color:#E0E0E0; }
+
+.ScheduleDisplayed #divControls, .ScheduleMapDisplayed #divControls,.ScheduleMapDisplayedMax #divControls { display:block; }
+.ScheduleDisplayed #divScheduleHeader, .ScheduleDisplayed #divScheduleBody { display:block; }
+
+.ScheduleMapDisplayed #divScheduleHeader, .ScheduleMapDisplayed #divScheduleBody { display:block; width:610px; }
+.ScheduleMapDisplayedMax #divScheduleHeader, .ScheduleMapDisplayedMax #divScheduleBody { display:block; width:190px; }
+
+#aDir1,#aDir2 {
+    display:block;
+    margin:0 10px;
+    border:1px none;
+    border-color:#C0C0C0 #E0E0E0 #E0E0E0 #C0C0C0;
+    font-size:15px;
+    background-color:white;
+}
+#aDir1.active, #aDir2.active{ font-weight:bold; }
+.ScheduleMapDisplayed #aDir1       , .ScheduleMapDisplayed #aDir2        { display:none; }
+.ScheduleMapDisplayed #aDir1.active, .ScheduleMapDisplayed #aDir2.active { display:block; float:left; }
+.ScheduleMapDisplayed #divScheduleLeft       , .ScheduleMapDisplayed #divScheduleRight        { display:none; }
+.ScheduleMapDisplayed #divScheduleLeft.active, .ScheduleMapDisplayed #divScheduleRight.active { display:block; float:left; }
+
+#divScheduleLeft ,#aDir1, #spanDirIcon, #spanDirNum { float:left; }
+#divScheduleRight,#aDir2{ float:right;}
+#spanDirIcon { margin-left:10px; }
+#spanDirNum { font-size:15px; }
+
+#divScheduleLeft,#divScheduleRight{
+    width:190px;
+    height:auto;
+    overflow:hidden;
+    /* can not add vertical padding or margins there - breaks height of divScheduleBody */
+}
+#dlDirStops1,#dlDirStops2{ margin-top:10px; }
+
+#divScheduleContent{ width:100%; height:auto; background-color:white; } /* can not add padding or margins there - breaks width of divScheduleCenter */
+#divScheduleCenter{ display:block; width:auto; height:auto; zoom:1; overflow:auto; padding:0 12px 0 10px; background-color:white; }
+.ScheduleDisplayed #divScheduleCenter{ display:block; }
+
+#divScheduleContentInner,#divScheduleContentTop { float:left; clear:both;}
+#divScheduleContentTop { width:100%; border:1px solid #E0E0E0; background-color:#F0F0F0; }
+#divScheduleContentInner.Right { float:right; }
+#divScheduleContentBottom { padding: 10px 0; }
+
+#divScheduleContentBottom p { margin-top:0.5em; text-indent: 23px;}
+#divScheduleContentBottom p.noindent { text-indent:0; }
+
+.timetable { float:left; margin: 10px 10px 0 0; color: #444; }
+.timetable a { padding:1px 3px; }
+.timetable a:hover     { border:1px solid #E0E0E0; padding:0 2px; }
+.timetable a.highlighted, .highlighted2 { border:1px solid goldenrod; padding:0 2px; background-color:gold;}
+.timetable th, table.timetable td{ border:1px solid #E0E0E0; }
+td a {vertical-align:middle;}
+.timetable th{
+    font-size:medium;
+    padding:0 4px 0 4px;
+    text-align:center;
+    vertical-align:middle;
+
+    background-color:#F0F0F0;
+}
+.timetable th.workdays { padding:2px 5px 2px 5px; width:auto; font-size:small; }
+
+a.other, a.other0, a.other1, a.other2, a.other3 { font-style:italic; color:gray;}
+a.current0, a.other0 { color:red; }
+a.current1, a.other1 { color:blue; }
+a.current2, a.other2 { color:green; }
+a.current3, a.other3 { color:darkcyan; }
+.timetable a.clicked { border:1px solid black; padding:0 2px; font-weight:bold; }
+
+#divSuggestedStops, #ulScheduleDirectionsList, .mapMenu, #divTransfersMenu {
+    position:absolute;
+    top:0;
+    display:none;
+    overflow:auto;
+
+    background-color:white;
+    border:1px solid;
+    border-color:#808080 black black #808080;
+}
+.mapMenu { overflow:hidden; }
+
+#ulScheduleDirectionsList {top:36px; font-size: 15px; white-space:nowrap; }
+
+#divSuggestedStops a, #ulScheduleDirectionsList a, .mapMenu a {
+    display:block;
+
+    padding: 1px 5px;
+    /*min-height:18px; breaks equal width in IE7 */
+    line-height:18px;
+    /*border-bottom:1px solid #CCCCCC;*/
+    white-space:nowrap;
+}
+#divSuggestedStops a {cursor: default;}
+#aSuggestShowMap { cursor: pointer; border-top: 1px solid lightgray;}
+
+#ulScheduleDirectionsList a { padding: 3px 5px; }
+
+#divSuggestedStops a:hover, #ulScheduleDirectionsList a:hover, .mapMenu a:hover, table.dropdown a:hover {
+    background-color:PowderBlue;
+}
+#divTransfersMenu { padding:3px 5px 3px 10px; border-color:#808080; white-space:nowrap; }
+
+div.dropdown { height:17px; background-color:white; border:1px solid black; padding:0 2px; }
+div.dropdown a { white-space:nowrap; }
+div.dropdown a:hover { border: 0; }  /* otherwise IE6 does not produce hover at all */
+div.dropdown span {display:inline-block; vertical-align:top; line-height:17px;}
+table.dropdown { position:absolute; left:-1px; top:17px; visibility:hidden; border-collapse:collapse; border: solid 1px black; background-color:white; }
+table.dropdown td { padding:0 }
+table.dropdown a { display:block; height:18px; line-height:18px; background-color:white; white-space:nowrap; padding: 1px 5px 1px 0;}
+.dropdown :hover table.dropdown, a:hover table.dropdown { visibility:visible; z-index:200;}
+
+span.details{ display:inline-block; margin-left:5px; font-size:x-small; color:#808080; }
+.graytext, .graytext a { color:#808080; }
+.smalltext { font-size:smaller; }
+
+.icon{ display:inline-block; height:18px; width:18px; margin-right:5px; vertical-align: -25%; background: no-repeat top left; }
+.icon_narrow{margin:0;}
+.button { height:15px; width:15px; cursor:pointer; border:1px solid; border-color: white #B0B0B0 #B0B0B0 white; background: no-repeat top left;}
+.pressed { border-color: #345684 #6C9DDF #6C9DDF #345684; background-position: 1px 1px; }
+.dropdown .arrow-down { display:inline-block; margin-bottom:2px; width:0; height:0; border-left:5px solid white; border-right:5px solid white; border-top:5px solid black; vertical-align:middle;}
+
+.icon_checked { background-image:url('_imagesnew/checked.png'); }
+.expand .icon  ,.icon_expand   { background-image:url('_imagesnew/expand.png'); }
+.collapse .icon,.icon_collapse { background-image:url('_imagesnew/collapse.png'); }
+.icon_map        { background-image:url('_imagesnew/map.png'); cursor:pointer; }
+/*.icon_map:hover  { border: 1px solid gray; margin: -1px 4px -1px -1px; }*/
+.icon_return     { background-image:url('_imagesnew/return.png'); }
+.icon_print      { background-image:url('_imagesnew/print.png'); }
+.icon.icon_stops,.button.icon_stops { height:15px; width:15px; background-image:url('_imagesnew/stops.png'); background-color:lightgray; }
+.icon.icon_stops { background-image:url('_imagesnew/map.png'); border:1px solid gray; }
+.icon.icon_plan  { background-image:url('_imagesnew/planner.png'); }
+.icon.icon_info  { background-image:url('_imagesnew/info.png'); }
+.icon_handicapped { display:inline-block; height:18px; width:18px; margin-left:-3px; outline:none; background-image:url('_imagesnew/handicapped.png'); }
+
+/*noinspection ALL*/
+.label_transport  { height:18px; white-space: nowrap; background:white; border: 1px solid gray; padding:0 1px; z-index:105;
+    border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; -o-border-radius: 3px;
+}
+.icon.icon_stopGreen { margin-right:0; background-image:url('_imagesnew/MarkerGreen.png'); }
+.icon.icon_stopRed   { margin-right:0; background-image:url('_imagesnew/MarkerRed.png'); }
+
+/*** styles for transport numbers ***/
+.num {border-radius: 4px 4px 4px 4px;  color:white; font-weight:bold; text-align:center; display:inline; margin-right:5px; }
+a.activetransfer { border-radius: 4px 4px 4px 4px; color:white; font-weight:bold; text-align:center; margin: 0 -2px; padding:0 2px 0 2px;}
+
+.num1{ padding-left:13px; padding-right:13px; border-radius: 4px 4px 4px 4px;}
+.num2{ padding-left: 9px; padding-right: 9px; border-radius: 4px 4px 4px 4px;}
+.num3{ padding-left: 5px; padding-right: 5px; border-radius: 4px 4px 4px 4px;}
+.num4{ padding-left: 1px; padding-right: 1px; border-radius: 4px 4px 4px 4px;}
+
+/*
+.bus          { background-color:#0073ac; }
+.trol         { background-color:#dc3131; }
+.tram         { background-color:#009900; }
+.nightbus     { background-color:#303030; }
+.regionalbus  { background-color:#004a7f; }
+.commercialbus{ background-color:purple;  }
+.minibus      { background-color:green;  }
+.train        { background-color:#009900; }
+.plane        { background-color:#404040; }
+.festal,a.activetransfer.festal { color:black; }
+*/
+
+#divScheduleRoute,#divScheduleStop  { float:left; padding:5px; line-height: 1.5em; clear:both; }
+
+.transferbus,a.transferbus            { color:#0073ac; font-weight:bold;}
+.transfertrol,a.transfertrol           { color:#dc3131; font-weight:bold;}
+.transfertram,a.transfertram           { color:#009900; font-weight:bold;}
+.transfernightbus,a.transfernightbus       { color:#303030; font-weight:bold;}
+.transferregionalbus,a.transferregionalbus    { color:#004a7f; font-weight:bold;}
+.transfercommercialbus,a.transfercommercialbus  { color:purple;  font-weight:bold;}
+.transferminibus,a.transferminibus      { color:green;  font-weight:bold;}
+.transferferry,a.transferferry          { color:blue;    font-weight:bold;}
+.transfertrain,a.transfertrain          { color:#009900; font-weight:bold;}
+.transferplane,a.transferplane          { color:#404040; font-weight:bold;}
+
+.departurebus           { color:#0073ac; font-size:smaller; font-style:normal}
+.departuretrol          { color:#dc3131; font-size:smaller; font-style:normal}
+.departuretram          { color:#009900; font-size:smaller; font-style:normal}
+.departurenightbus      { color:#303030; font-size:smaller; font-style:normal}
+.departureregionalbus   { color:#004a7f; font-size:smaller; font-style:normal}
+.departurecommercialbus { color:purple;  font-size:smaller; font-style:normal}
+.departureminibus       { color:green;   font-size:smaller; font-style:normal}
+.departuretrain         { color:#009900; font-size:smaller; font-style:normal}
+.departureferry         { color:blue;    font-size:smaller; font-style:normal}
+.departureplane         { color:#404040; font-size:smaller; font-style:normal}
+
+#divScheduleContentInner.HideNumbers td>a>span { display:none; }
+
+.grey{ background-color:#F0F0F0; }
+.white{ background-color:white; }
+
+.mapStopName,.mapStopNameHidden { background-color:#F0F0F0; border:1px solid lightgray; white-space:nowrap; padding:0 3px;
+    opacity:0.7;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+}
+.mapStopNameHidden { background-color:red; display:none; }
+.unhide { display:none; }
+a:hover .unhide { display:inline-block; }
+
+a.mapStopOnRoute { display:block; height:11px; width:11px; z-index: 101;}
+a.mapStop        { display:block; height: 8px; width: 8px; z-index: 101;}
+a.mapStopSelected { background-color:yellow; border:1px solid gold; white-space:nowrap; z-index: 103; padding:0 3px; }
+a.mapStopOnRoute:hover { z-index: 107;}
+
+.mapStopSelected:hover { text-decoration:underline;  z-index: 107;}
+
+a.mapStopOnRoute:hover + a.mapStopName
+,a.mapStop:hover + a.mapStopName
+,a.mapStopOnRoute:hover + a.mapStopNameHidden
+,a.mapStop:hover + a.mapStopNameHidden
+,a.mapStopName:hover { display:inline-block; background-color:white; z-index: 107; opacity:1;
+    -ms-filter:"";
+    filter: "";
+}
+
+/* does not work in the map :(
+a:active:hover { z-index: 100; }
+a:active { z-index: 100; }
+*/
+
+.weekdays{padding-right:15px;}
+.weekdays span{ margin:2px 2px 0 0; padding:0 2px 0 2px; font-family:'Courier New',Courier,monospace; border:1px solid #999999; color:#333333; background-color:#E0E0E0; }
+.weekdays img{ vertical-align: bottom; margin-left:2px;}
+span.weekend { background-color:#C0C0C0; }
+span.blankday{ color:white; background-color:white; }
+
+/*** styles for stops list in schedule pane ***/
+#divScheduleLeft a,#divScheduleRight a{
+    display:block;
+    padding: 2px 0 2px 10px;
+}
+
+#divScheduleLeft a:hover,#divScheduleRight a:hover{
+    background-color:#F0F0F0;
+    text-decoration:underline;
+}
+#divScheduleLeft a.current ,#divScheduleRight a.current,
+#divScheduleLeft a.current0,#divScheduleRight a.current0,
+#divScheduleLeft a.current1,#divScheduleRight a.current1,
+#divScheduleLeft a.current2,#divScheduleRight a.current2,
+#divScheduleLeft a.current3,#divScheduleRight a.current3 {
+    background-color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+/*
+#divScheduleLeft a.active{
+    text-align:right;
+    padding-right:5px;
+    padding-left:0;
+}
+#divScheduleRight a.active{
+    padding-left:5px;
+}
+*/
+
+.arrow {
+    position: absolute; width:9px; height:9px; z-index:110;
+    border: 1px solid white;
+
+    -webkit-transform-origin:11px 11px;
+    -moz-transform-origin:11px 11px;
+    -ms-transform-origin:11px 11px;
+    -o-transform-origin:11px 11px;
+    transform-origin:11px 11px;
+}
+.circle {
+    position: absolute; width:18px; height:18px; line-height:18px; z-index:110;
+    text-align:center;
+
+    border: 1px solid white;
+    color: white;
+    font-weight:bolder;
+    cursor:pointer;
+
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    -ms-border-radius: 18px;
+    -o-border-radius: 18px;
+    border-radius: 18px;
+}
+
+/*
+#divNav .active {border-radius: 8px 8px 0px 0px; padding: 6px 4px 8px 1px; font-weight:normal; border: 1px solid #808080; border-bottom-color: white;}
+*/
+
+.baloon_content {
+    border: 2px solid black;
+    border-radius: 4px 4px 4px 4px;
+    background-color:white;
+    margin-bottom:12px;
+    white-space:nowrap;
+    padding:5px;
+}
+
+.baloon_close {
+    position:absolute;
+    top:8px;
+    cursor:pointer;
+    right:8px;
+    background: url("//maps.gstatic.com/mapfiles/hpimgs28.png") no-repeat scroll -108px -26px transparent;
+    height: 10px;
+    width: 10px;
+}
+
+.baloon_content .icon {
+    margin-top:4px;
+}
+
+.baloon_arrow {
+    background-image: url("_imagesnew/baloon_arrow.png");
+    width:16px;
+    height:9px;
+    position:absolute;
+    bottom:5px;
+}
+
+.baloon_title {
+    margin-left:5px;
+    font-weight:bold;
+    padding-right:20px;
+}
+
+/* DESIGN CHANGES */
+/* we used some workarounds to get it do display with CSS override, which isn't ofcourse neccesary when you do it in php */
+/* these examples are here just so it would be easier to implement and so we would have less misunderstandings */
+
+
+/* header and container postition changed to fit stripe.png */
+#divHeader{ overflow:hidden; width:100%; height:36px; line-height: 36px;
+    padding-top: 10px;
+    border-bottom: 1px solid #999999;
+    background: url(_imagesnew/stripe.png) repeat-x center top;}
+
+#divContainer{ position:absolute; top:47px;	bottom:0; left:0; width:100%; min-width:700px; overflow:auto; }
+
+
+/* background color #fff */
+body{ height:100%; background-color:#fff; }
+
+#divNav{ float:left; width:190px; padding:5px 0 5px; background-color:#fff; border-bottom:1px none #808080; }
+
+.ScheduleDisplayed #divHeader,.ScheduleMapDisplayed #divHeader,.ScheduleMapDisplayedMax #divHeader { color:#404040; background-color:#fff; cursor:pointer;}
+
+#divScheduleContentTop { width:100%; border:1px solid #e0e0e0; background-color:#fff; }
+
+.ScheduleDisplayed #divNav .active,.ScheduleMapDisplayed #divNav .active {background-color: #fff; border-style: none; padding: 6px 5px 6px 2px;}
+
+
+/* icon files and sizes changed */
+.icon{ display:inline-block; height:19px; width:19px; margin-right:3px; vertical-align: -25%; }
+
+#city .icon {
+    height: 21px;width: 21px;
+    background-image: url(_imagesnew/city.png) !important;}
+
+#region .icon {
+    height: 19px !important;
+    width: 30px !important;
+    margin-left:-5px !important;
+    background-image: url(_imagesnew/region.png) !important;}
+
+
+.icon.icon_bus			{background-image:url(_imagesnew/bus.png) !important;}
+.icon.icon_trol			{background-image:url(_imagesnew/trol.png) !important;}
+.icon.icon_tram         {background-image:url(_imagesnew/tram.png) !important;}
+.icon.icon_regionalbus  {background-image:url(_imagesnew/regionalbus.png) !important;}
+.icon.icon_commercialbus{background-image:url(_imagesnew/commercialbus.png);}
+.icon.icon_train        {background-image:url(_imagesnew/train.png);}
+.icon.icon_ferry        {background-image:url('_imagesnew/ferry.png');}
+
+
+/* navigation bar changed to gray */
+#divControls{ display:none; position:absolute; white-space:nowrap; top:22px; left:50%; margin-left:-200px;}
+#iconSideLeft  { background-image:url(_imagesnew/tabsideleft.png ) !important; }
+#iconSideRight { background-image:url(_imagesnew/tabsideright.png) !important; }
+#divControlsInner { display:inline-block; vertical-align: top; background-color: #ededed;  height:24px; line-height: 24px; }
+#divControlsInner a { margin-right:10px; font-weight: normal; color:#000; font-size: small;
+    text-decoration: none !important; font-style: normal; }
+
+#divControlsInner a.icon { vertical-align:text-bottom; }
+#divControlsInner .icon_map:hover { border-color:transparent; }
+#divControlsInner :hover {text-decoration: underline;}
+
+
+/* timetable symbols --- "changed route" and "shortened route" is combined in one symbol */
+a.other, a.other0, a.other1, a.other2, a.other3 {font-style: normal; color:#000;font-weight: normal;}
+a.current0, a.other0, a.current1, a.other1 {background: url(_imagesnew/changed_route.gif) no-repeat right top;}
+
+
+/* timetable symbols --- "low floor access" changed */
+/* EE legend reads "SINISEL taustal..." and EN reads "...with BLUE background...". Consult wording with UDO OTS form TTA */
+
+.timetable a.highlighted, .highlighted2 { border: 0px;border-color: #000;
+    border-bottom:2px solid blue;
+    border-top: 2px solid #dceaf8;
+    background-color: #dceaf8;
+    padding: 0px 3px;}
+
+
+/* background colors for routes */
+.bus          { background-color: #00c7b8;	text-shadow: 1px 0 1px #00bda9, -1px 0px 1px #00bda9, 0px 1px 1px #00bda9, 0px -1px 1px #00bda9;}
+.trol         { background-color:#0064D7;}
+.tram         { background-color:#FF601E;}
+.nightbus     { background-color:black;}
+.regionalbus  { background-color:#9c1630;}
+.commercialbus{ background-color:#6900b8;}
+.minibus      { background-color:black;}
+.train        { background-color:#009900;}
+.ferry        { background-color:blue; }
+.plane        { background-color:black;}
+.festal,a.activetransfer.festal { color:white; }
+
+
+.transferbus,a:hover.transferbus            { color:#00c7b8 !important; font-weight: bold;}
+.transfertrol,a:hover.transfertrol           { color:#0064D7 !important; font-weight:bold;}
+.transfertram,a:hover.transfertram           { color:#FF601E !important; font-weight:bold;}
+.transfernightbus,a:hover.transfernightbus       { color:black; font-weight:bold;}
+.transferregionalbus,a:hover.transferregionalbus    { color:#9c1630 !important; font-weight:bold;}
+.transfercommercialbus,a:hover.transfercommercialbus  { color:#6900b8 !important;  font-weight:bold;}
+.transferminibus,a:hover.transferminibus  { color:black;  font-weight:bold;}
+.transfertrain,a:hover.transfertrain          { color:black; font-weight:bold;}
+.transferplane,a:hover.transferplane          { color:black; font-weight:bold;}
+
+
+/* background color changed to lighter gray */
+
+#divScheduleBody { background-color:#ededed; }
+
+
+/* start of updates by Edvardas */
+#listTransports dt.transport {
+    padding-left:20px;
+}
+
+#inputStop {
+    margin:0px;
+    color: gray;
+}
+
+#spanRoutesFromStop {
+    display:inline;
+}
+
+.icon_tickets {
+    background-image:url('_imagesnew/ticket.png');
+    height:26px;
+    width:19px;
+}
+
+.icon_news {
+    background-image:url('_imagesnew/news.gif');
+    height:23px;
+    width:16px;
+    margin-left:1px;
+}
+
+.addpadding {
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+span.external {
+    padding-right:16px;
+    background-image:url('_imagesnew/external_link.png');
+    background-repeat:no-repeat;
+    background-position:right;
+}
+
+#aShowMap .icon.icon_stops {
+    border:0px;
+    background-color:inherit;
+    padding-top:4px;
+    height:19px;
+    width:19px;
+}
+
+#aSuggestShowMap .icon.icon_stops {
+    background-color:transparent;
+    background-position:0px -3px;
+    border:0px;
+}
+
+.inputTable {
+    float:left;
+    margin:2px 0 4px 0;
+}
+
+#tblFilterRoutes {
+    margin-right:10px;
+}
+
+#divLogo {
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    background-image:url('_imagesnew/tallinn.png');
+    background-repeat:no-repeat;
+    width:181px;
+    height:19px;
+    padding-bottom:20px;
+    background-color:white;
+}
+
+#divContentRoutes,
+#divContentDepartingRoutes,
+#divContentPlanner {
+    clear:both;
+}
+
+
+.xplan .inputTable {
+    display:none;
+}
+
+/* end of updates by Edvardas */
+
+
+@media handheld, only all and (max-width: 800px) {
+    html {height:auto; overflow:auto;}
+    #divContainer {position:static; height: auto; bottom:auto;}
+    #divControls{ left:0; margin-left:0; }
+    #divContentWrapper{ position:absolute; left:190px; height:auto;}
+    .ScheduleDisplayed #divContentWrapper{left:0;}
+
+    #divScheduleContentInner {white-space:nowrap;}
+    .timetable{ float:none; display: inline-block;}
+
+    #aDir2,#divScheduleRight,#divFacebook,#webcounter, #programmedBy, #divMapMaximize{display:none;}
+    #divScheduleHeader,#divScheduleBody { position:relative; top:auto;}
+    #divMapWrapper{ position:absolute; width:100%; top:0;bottom:0;}
+    .MapDisplayed #divMapWrapper,.MapDisplayedMax #divMapWrapper
+    ,.ScheduleMapDisplayed #divMapWrapper,.ScheduleMapDisplayedMax #divMapWrapper { width:100%; display:block; }
+
+    #LogoInHeader{ display:none; }
+
+    .MapDisplayed #divContentWrapper,.MapDisplayedMax #divContentWrapper
+    ,.ScheduleMapDisplayed #divContentWrapper,.ScheduleMapDisplayedMax #divContentWrapper { display:none; }
+}
+
+@media print {
+    html {height:auto; overflow:auto;}
+    /*body {zoom:80%;}*/
+    #divContainer {position:static; height: auto; bottom:auto;}
+    #divScheduleHeader,#divScheduleBody {position:relative; top:auto;}
+
+    .inputTable, #divLogo,
+    #divHeader,#LogoInHeader, #divNav, #divControls, .ScheduleDisplayed #divControls, .ScheduleMapDisplayed #divControls
+    ,#tblFilterRoutes
+    ,#divMapHide,#divMapMaximize,#divMapRestore,#divMapShowAllStops
+    ,#divScheduleContentBottom
+    ,#aDir1,#aDir2, #divScheduleLeft,#divScheduleRight,.icon ,.dropdown .arrow-down
+    ,#labelShowDeparturesWithNumbers
+    ,#webcounter, #programmedBy
+    { display:none; }
+
+    img.icon { display:inline-block; }
+
+    #aDir1.active,#aDir2.active, #divScheduleContentInner.Right { display:block; float:left; }
+    #divScheduleLeft.active,#divScheduleRight.active {display:block; float:left; }
+
+    #divContainer, #divContentWrapper, #divContent, #divScheduleContent { top:0; height:auto; overflow:visible; min-width:0;}
+    .ScheduleMapDisplayed #divContentWrapper { float:left; height:600px; width:100%; }
+    .ScheduleMapDisplayed #divScheduleHeader,.ScheduleMapDisplayed #divScheduleBody { width:100%; }
+    .ScheduleMapDisplayed #divMapWrapper { float:left; margin-left: 190px; height:500px; width:100%; }
+    .ScheduleMapDisplayed #divMap { height:500px; width:100%; }
+
+}

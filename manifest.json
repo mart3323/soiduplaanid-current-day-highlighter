@@ -1,0 +1,34 @@
+{
+  "name": "Soiduplaanid+",
+  "version": "0.2",
+  "version_name": "0.2 (Functional work in progress)",
+  "description": "Makes it easier to quickly find the next bus on http://soiduplaanid.tallinn.ee",
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://soiduplaan.tallinn.ee/*"],
+
+      "css": ["content_script/style.css"],
+
+      "js": ["libraries/arrive.js",
+            "content_script/options.js",
+            "content_script/CONSTANTS.js",
+            "content_script/features/countdown.js",
+            "content_script/features/cursor.js",
+            "content_script/elements.js",
+            "content_script/main.js"]
+    }
+  ],
+  "options_ui": {
+    "page": "options_page/index.html",
+    "chrome_style": true
+  },
+  // Fallback fer versions earlier than Chrome 40
+  "options_page": "options_page/index.html",
+
+
+  "manifest_version":2
+}

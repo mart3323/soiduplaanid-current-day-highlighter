@@ -1,0 +1,68 @@
+@keyframes mymove {
+    0% {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    100% {
+        transform: matrix(1.5,  0, 0, 1.5, 0, 0);
+    }
+}
+body table.m3-fadedTable {
+    opacity: 0.5;
+    box-shadow: 1px 1px 3px gray;
+}
+
+body table.m3-activeTable {
+    filter: drop-shadow(2px 1px 5px black);
+    box-shadow: 2px 1px 5px black;
+}
+body table.timetable a {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+body table.timetable .m3-cursor {
+    position: relative;
+    overflow: visible;
+}
+body table.timetable .m3-cursor > span {
+    background-color: red;
+    position: absolute;
+    top:0.4em;
+    left:-0.15em;
+    height: 0.4em;
+    width: 0.4em;
+    border-radius: 100%;
+    display: inline-block;
+    animation: mymove 0.6s ease 0s infinite alternate;
+    z-index:999;
+    opacity: 1;
+}
+#divScheduleBody {
+    /* Don't grow to contain the entire screen */
+    bottom: auto !important;
+    /* Don't gain scrollbars */
+    overflow: visible !important;
+    /* Float above the added signature */
+    /* Have empty space for the signature text */
+    padding-bottom: 4em;
+}
+#m3-signature {
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    bottom: 0;
+    left: 256px;
+    width: 400px;
+    transition: all 0.35s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    overflow:hidden;
+}
+#m3-signature > img {
+    left:-105px;
+    position:relative;
+}
+#m3-signature > div {
+    z-index: 2;
+}
+#m3-signature.active {
+    bottom: -60px;
+    opacity: 1;
+}
